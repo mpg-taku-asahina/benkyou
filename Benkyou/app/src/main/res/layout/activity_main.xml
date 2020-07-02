@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -11,20 +10,86 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:ellipsize="end"
+            android:gravity="right"
+            android:maxLines="1"
+            android:text="@{view.number}"
+            android:textSize="30sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`7`}"
+                app:onClick="@{() -> view.selectNumber(7)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`8`}"
+                app:onClick="@{() -> view.selectNumber(8)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`9`}"
+                app:onClick="@{() -> view.selectNumber(9)}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`4`}"
+                app:onClick="@{() -> view.selectNumber(4)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`5`}"
+                app:onClick="@{() -> view.selectNumber(5)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`6`}"
+                app:onClick="@{() -> view.selectNumber(6)}" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`1`}"
+                app:onClick="@{() -> view.selectNumber(1)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`2`}"
+                app:onClick="@{() -> view.selectNumber(2)}" />
+
+            <include
+                layout="@layout/include_number_key"
+                app:key="@{`3`}"
+                app:onClick="@{() -> view.selectNumber(3)}" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </layout>
